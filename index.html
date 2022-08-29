@@ -99,19 +99,24 @@
 <script src="simple-forms/js/simple-forms-translations.js"></script>
 <script src="simple-forms/js/simple-forms.min.js"></script>
 
-var simple_forms = new SimpleForms("#contact-form", {
-    lang: "en",         // language for error/info strings
-    theme: "white",     // form color theme, options: white | dark | purple | red | green | blue | faded-light | faded-dark
-    style: "underline", // form fields style, options: none | underline | classic | classic-rounded | modern | modern-rounded
-    files: {
-        enabled: true,
-        extensions: "gif jpg jpeg png pdf doc docx",
-        min: 0,
-        max: 10,
-        maxFileSize: 24,                                                // Max allowed file size in MB, recommended size: 24
-        filesUploadHandler: "simple-forms/files-upload-handler.php", // path to files upload handler, default: simple-forms/files-upload-handler.php
-    },
-});
+<script>
+    var simple_forms = new SimpleForms("#contact-form", {                   // replace #contact-form with your form ID
+        lang: "en",                                                         // language for error/info strings, check simple-forms-translations.js file
+        theme: "white",                                                     // form color theme, options: white | dark | purple | red | green | blue | faded-light | faded-dark
+        style: "modern-rounded",                                            // form fields style, options: none | underline | classic | classic-rounded | modern | modern-rounded
+        validate: true,                                                     // validate form fields
+        consent: true,                                                      // enable submit button after consent checkbox is checked
+        tooltips: true,                                                     // show validation errors as tooltips, if false will show errors as strings bellow the field
+        files: {
+            enabled: true,
+            extensions: "gif jpg jpeg png pdf doc docx",
+            min: 0,
+            max: 10,
+            maxFileSize: 24,                                                // Max allowed file size in MB, recommended size: 24
+            filesUploadHandler: "simple-forms/files-upload-handler.php", // path to files upload handler, default: simple-forms/files-upload-handler.php
+        },
+    });
+</script>
 
 </body>
 </html>
