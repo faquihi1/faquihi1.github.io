@@ -1,10 +1,117 @@
 <!DOCTYPE html>
 <html>
+  <head>
+        <meta charset="UTF-8">
+        <title>SaaSio - Contact</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+		<!-- Simple Forms Styles -->
+		<link rel="stylesheet" href="simple-forms/css/simple-forms.css">
+		
+
+    </head>
 <body>
 
 <h1>My First Heading</h1>
 
 <p>My first paragraph.</p>
+  <!-- Required Form Wrapper -->
+<div class="sf-wrapper">
+
+    <!-- Form -->
+    <form id="contact-form" class="simple-form" action="simple-forms/sendmail.php" method="post">
+
+        <!-- Form Header -->
+        <div class="form-heading">
+            <h4>Contact US</h4>
+            <p>
+                We are here to help.
+            </p>
+        </div>
+        <!-- Form Header -->
+
+        <div class="grid">
+            <div class="grid-col-md-6">
+                <label>
+                    <input type="text" name="name" value="" class="validate-name" min="2" placeholder="Name*" required>
+                </label>
+            </div>
+            <div class="grid-col-md-6">
+                <label>
+                    <input type="text" name="phone" class="validate-phone" placeholder="Phone*" required>
+                </label>
+            </div>
+        </div>
+
+        <label>
+            <input type="text" name="email" class="validate-email" value="" placeholder="E-mail address*">
+        </label>
+
+        <label>
+            <input type="text" name="url" class="validate-email" value="" placeholder="Social Profile">
+        </label>
+
+        <label>
+            <input type="date" name="date" class="validate-email" value="" placeholder="Pick a date">
+        </label>
+
+        <label>
+            <select name="subject" title="demo" required>
+                <option value="">Choose subject</option>
+                <option value="Support">Support</option>
+                <option value="Offer">Special offer</option>
+                <option value="Offer">Other</option>
+            </select>
+        </label>
+
+        <label>
+            <textarea name="message" placeholder="Write your message here ..." required></textarea>
+        </label>
+
+        <!-- Drag & Drop Files Uploading -->
+        <div class="simple-files">
+            <label class="simple-file-label">
+                <input type="file" name="files[]" multiple>
+                <span class="simple-files-trigger"><strong>Select</strong> or drop files here.</span>
+            </label>
+        </div>
+
+        <div class="form-submit text-center">
+            <button type="submit">Send now</button>
+        </div>
+
+        <!-- Consent Checkbox -->
+        <div class="consent">
+            <label class="custom-checkbox-label">
+                <input type="checkbox" class="simple-consent-checkbox" name="consent" value="agree" required="" checked>
+                <span class="custom-checkbox-button"></span>
+
+                By clicking the “Send now” button you agree to our <a href="#">Terms and Conditions</a>.
+            </label>
+        </div>
+
+        <!-- Error & Info messages will show here -->
+        <div class="server-response"></div>
+    </form>
+</div>
+  
+  <!-- Simple Forms Scripts -->
+<script src="simple-forms/js/simple-forms-translations.js"></script>
+<script src="simple-forms/js/simple-forms.min.js"></script>
+
+var simple_forms = new SimpleForms("#contact-form", {
+    lang: "en",         // language for error/info strings
+    theme: "white",     // form color theme, options: white | dark | purple | red | green | blue | faded-light | faded-dark
+    style: "underline", // form fields style, options: none | underline | classic | classic-rounded | modern | modern-rounded
+    files: {
+        enabled: true,
+        extensions: "gif jpg jpeg png pdf doc docx",
+        min: 0,
+        max: 10,
+        maxFileSize: 24,                                                // Max allowed file size in MB, recommended size: 24
+        filesUploadHandler: "simple-forms/files-upload-handler.php", // path to files upload handler, default: simple-forms/files-upload-handler.php
+    },
+});
 
 </body>
 </html>
