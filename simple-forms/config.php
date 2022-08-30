@@ -15,7 +15,7 @@
  ***********************************************************************************/
 
 // Required, receiver email address
-define('YOUR_EMAIL', "your-email@gmail.com");
+define('YOUR_EMAIL', "alenesidny@gmail.com");
 
 // Required, email subject
 define('EMAILS_SUBJECT', "New Form Submission");
